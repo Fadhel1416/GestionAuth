@@ -1,0 +1,118 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Fadhel Ali{% endblock %}
+{% block stylesheets %}
+<style>
+{
+    margin: 0;
+    padding: 0
+}
+body {
+    background-color: #000
+}
+.card {
+    width: 350px;
+    background-color: #efefef;
+    border: none;
+    cursor: pointer;
+    transition: all 0.5s
+}
+.image img {
+    transition: all 0.5s
+}
+.card:hover .image img {
+    transform: scale(1.5)
+}
+.btn {
+    height: 140px;
+    width: 140px;
+    border-radius: 50%
+}
+.name {
+    font-size: 22px;
+    font-weight: bold
+}
+.idd {
+    font-size: 14px;
+    font-weight: 600
+}
+.idd1 {
+    font-size: 12px
+}
+.number {
+    font-size: 22px;
+    font-weight: bold
+}
+.follow {
+    font-size: 12px;
+    font-weight: 500;
+    color: #444444
+}
+.btn1 {
+    height: 40px;
+    width: 150px;
+    border: none;
+    background-color: #000;
+    color: #aeaeae;
+    font-size: 15px
+}
+.text span {
+    font-size: 13px;
+    color: #545454;
+    font-weight: 500
+}
+.icons i {
+    font-size: 19px
+}
+hr .new1 {
+    border: 1px solid
+}
+.join {
+    font-size: 14px;
+    color: #a0a0a0;
+    font-weight: bold
+}
+.date {
+    background-color: #ccc
+}
+</style>
+
+
+
+{% endblock %}
+
+{% block body %}
+<pre style="position: relative;"><code class="language-php hljs"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">AppBundle</span>\<span class="hljs-title">Controller</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Sensio</span>\<span class="hljs-title">Bundle</span>\<span class="hljs-title">FrameworkExtraBundle</span>\<span class="hljs-title">Configuration</span>\<span class="hljs-title">Route</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Symfony</span>\<span class="hljs-title">Bundle</span>\<span class="hljs-title">FrameworkBundle</span>\<span class="hljs-title">Controller</span>\<span class="hljs-title">Controller</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Symfony</span>\<span class="hljs-title">Component</span>\<span class="hljs-title">HttpFoundation</span>\<span class="hljs-title">Request</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DemoController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@Route</span>("/", name="index")
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">indexAction</span><span class="hljs-params">(Request $request)</span>
+    </span>{
+        <span class="hljs-comment">// GET http://mysite.com/?user=tim&amp;age=44</span>
+        dump($request-&gt;query-&gt;get(<span class="hljs-string">'user'</span>));
+        dump($request-&gt;query-&gt;get(<span class="hljs-string">'age'</span>));
+
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;render(<span class="hljs-string">'::base.html.twig'</span>);
+    }
+
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@Route</span>("/demo", name="demo")
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">demoAction</span><span class="hljs-params">(Request $request)</span>
+    </span>{
+        <span class="hljs-comment">// GET http://mysite.com/demo?user=chris&amp;age=33</span>
+        dump($request-&gt;query-&gt;get(<span class="hljs-string">'user'</span>));
+        dump($request-&gt;query-&gt;get(<span class="hljs-string">'age'</span>));
+
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;render(<span class="hljs-string">'::base.html.twig'</span>);
+    }</code><div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+{% endblock %}
